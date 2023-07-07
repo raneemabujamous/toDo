@@ -75,7 +75,6 @@ function App() {
     setTasktoUpd(taskToUpd[0])
   }
   const onSave = (index: number, Newtask: string, priority: string) => {
-    console.log('index', index, Newtask, 'Newtask', priority, 'priority')
     if (index > 0) {
       setTasks((prevTasks: any) => {
         let taskToUpd = prevTasks.map((task: any) => {
@@ -121,7 +120,6 @@ function App() {
           (task) => String(task[filterON]) == e.target.value,
         )
 
-        console.log(filterdData, 'filterdData')
         return filterdData
       })
     }
