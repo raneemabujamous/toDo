@@ -147,22 +147,26 @@ function App() {
   }
 
   return (
-    <div className="p-4">
-      <div>
-        <h2 className="text-2xl font-semibold leading-tight">To Do List</h2>
+    <div className="w-full md:w-2/3   p-4 m-auto">
+      <div className="flex justify-around ">
+        <h2 className="text-2xl font-semibold p-4 mb-3">Task Mangement</h2>
       </div>
       {isOpen && (
         <Model closeModel={closeModel} task={TasktoUpd} onSave={onSave} />
       )}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center md:space-x-4 mt-9">
+      <div className="flex justify-end">
         <button
-          className="bg-red-400 hover:bg-green-100 text-white font-bold py-2 px-4 rounded md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4"
+          className="bg-green-400 hover:bg-green-100 text-white font-bold p-3 rounded"
           onClick={() => setIsOpen(true)}
         >
           Add New Task
         </button>
-        <div className=" gap-2 flex flex-col md:flex-row md:justify-end md:gap-2 mt-4 md:mt-0">
+      </div>
+      <div className="  flex  flex-col md:flex-row justify-between gap-2 mt-5">
+        <div>
           <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
+        </div>
+        <div className="  flex  flex-col md:flex-row justify-between gap-2">
           <Filter
             filterON={'done'}
             handleFilter={handleFilter}
@@ -184,7 +188,8 @@ function App() {
           >
             sort form low to high
           </button>
-          {/* <Filter
+        </div>
+        {/* <Filter
             filterON={'priority'}
             handleFilter={handleFilter}
             filterOption={[
@@ -194,7 +199,6 @@ function App() {
               { name: 'Low', value: 'Low' },
             ]}
           /> */}
-        </div>
       </div>
       <Table
         dataToShow={dataToShow}

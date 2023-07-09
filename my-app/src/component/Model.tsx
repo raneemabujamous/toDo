@@ -19,13 +19,13 @@ const Model: React.FC<Props> = ({ closeModel, task, onSave }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="absolute bg-white w-1/2 rounded shadow-lg p-6">
+      <div className="w-2/3 absolute bg-white  rounded shadow-lg p-6 md:w-1/3">
         <h2 className="text-xl font-bold mb-4">Task Management</h2>
         <div className="mb-4">
           <label htmlFor="taskName">Task Name</label>
           <input
             id="taskName"
-            className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring focus:border-blue-500"
+            className="w-full border border-gray-300 px-4 py-2 rounded mt-2 focus:outline-none focus:ring focus:border-blue-500"
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -36,7 +36,7 @@ const Model: React.FC<Props> = ({ closeModel, task, onSave }) => {
           <label htmlFor="taskPriority">Task Priority</label>
           <select
             id="taskPriority"
-            className="w-full appearance-none bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:ring focus:border-blue-500"
+            className="w-full appearance-none bg-white border border-gray-300  mt-2 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:ring focus:border-blue-500"
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
           >
